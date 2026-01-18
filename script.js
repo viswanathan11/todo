@@ -19,6 +19,7 @@ function showCurrentSection(){
   else add.classList.remove("none");
 }
 showCurrentSection();
+
 const addtask = document.getElementById("add-task");
 const viewtask = document.getElementById("view-task");
 viewtask.addEventListener("click",viewTask);
