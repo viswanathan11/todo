@@ -10,111 +10,160 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #636b2f;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main-container {
-  color: #3d4127;
-  background: #d4de95;
-  width: 350px;
-  min-height: 300px;
+  color: #2d3748;
+  background: white;
+  width: 400px;
+  min-height: 350px;
   text-align: center;
-  /* display: flex; */
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  border-radius: 10px;
-  border: white 3px solid;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 h2 {
-  font-size: 30px;
-  padding-top: 50px;
+  font-size: 32px;
+  padding-top: 20px;
+  font-weight: 700;
+  color: #1a202c;
+  letter-spacing: -0.5px;
 }
 #quote {
-  padding-top: 30px;
-  font-weight: 500;
-  font-size: 25px;
+  padding-top: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #718096;
+  font-style: italic;
+  line-height: 1.6;
 }
 .btn {
-  padding-top: 55px;
+  padding-top: 40px;
   display: flex;
   justify-content: space-around;
+  gap: 15px;
 }
 button {
-  padding: 10px;
-  border-radius: 5px;
-  font-size: small;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 button:active {
-  background-color: #f4f4ae;
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
 }
 
 .add-task-container {
-  background: #d4de95;
-  color: #3d4127;
+  background: white;
+  color: #2d3748;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  padding: 20px;
-  width: 350px;
-  border-radius: 10px;
-  border: white 3px solid;
+  padding: 40px 30px;
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 #task-form {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  gap: 15px;
 }
 label {
-  font-size: 25px;
-  font-weight: bolder;
-  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2d3748;
 }
 #task,
 #deadline {
   text-align: center;
-  height: 40px;
-  border: black solid 1px;
-  border-radius: 5px;
+  height: 45px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  width: 100%;
 }
-
-#done {
-  margin-left: 200px;
+#task:focus,
+#deadline:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .view-task {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #d4de95;
-  color: #3d4127;
-  min-height: 250px;
-  min-width: 380px;
-  border-radius: 5px;
-  border: white solid 3px;
+  background: white;
+  color: #2d3748;
+  min-height: 300px;
+  min-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 30px;
 }
 table {
-  border: white solid 2px;
-  border-radius: 5px;
-  margin-top: 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  margin-top: 25px;
   text-align: center;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  width: 100%;
 }
-td,th {
-  padding: 10px;
+th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+tr:hover {
+  background-color: #f7fafc;
 }
 
 .btn-sec {
-  padding-top: 50px;
-  padding-bottom: 20px;
-  min-width: 350px;
+  padding-top: 30px;
+  padding-bottom: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 15px;
 }
 .none {
   display: none;
