@@ -20,6 +20,7 @@ body {
   width: 400px;
   min-height: 350px;
   text-align: center;
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
