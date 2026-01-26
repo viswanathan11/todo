@@ -101,7 +101,7 @@ function loadStudents(){
     row.innerHTML=`<td>${sno++}</td>
     <td>${keys[i]}</td>
     <td>${localStorage.getItem(keys[i])}</td>
-    <td><button id="done-btn" data-student="${keys[i]}" onclick="removeStudent(this)">Delete</button><td>`;
+    <td><button class="delete-btn" data-student="${keys[i]}" onclick="removeStudent(this)">Delete</button></td>`;
     tbody.appendChild(row);
   }
 
