@@ -4,36 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>TASK MANAGER</title>
+    <title>STUDENT MANAGER</title>
   </head>
   <body>
     <div class="main-container none ">
-      <h2>Your Task Manager</h2>
+      <h2>Your Student Manager</h2>
       <p id="quote">Talent without working hard is nothing.</p>
       <div class="btn">
-        <button id="add-task">Add Task</button>
-        <button id="view-task">View Task</button>
+        <button id="add-student">Add Student</button>
+        <button id="view-student">View Students</button>
       </div>
     </div>
-    <div class="add-task-container none">
-      <form id="task-form">
-        <label for="task">Enter your Task </label>
+    <div class="add-student-container none">
+      <form id="student-form">
+        <label for="student-name">Student Name </label>
         <br />
         <input
           type="text"
-          id="task"
-          placeholder="Enter your Task"
-          name="task"
+          id="student-name"
+          placeholder="Enter Student Name"
+          name="student-name"
           required
         />
         <br />
-        <label for="deadline">Enter deadline </label>
+        <label for="student-id">Student ID </label>
         <br />
         <input
-          id="deadline"
-          type="datetime-local"
-          placeholder="Enter your date"
-          name="deadline"
+          id="student-id"
+          type="text"
+          placeholder="Enter Student ID"
+          name="student-id"
           required
         />
         <div class="btn">
@@ -42,21 +42,21 @@
         </div>
       </form>
     </div>
-    <div class="view-task none">
-      <h2>Your Task</h2>
+    <div class="view-student none">
+      <h2>Your Students</h2>
       <table>
         <thead>
           <th>Sno</th>
-          <th>Task</th>
-          <th>Deadline</th>
-          <th>Done</th>
+          <th>Student Name</th>
+          <th>Student ID</th>
+          <th>Delete</th>
         </thead>
         <tbody>
         </tbody>
       </table>
       <div class="btn-sec">
         <button id="back-view" type="button">Back</button>
-        <button id="add-task-view">Add Task</button>
+        <button id="add-student-view">Add Student</button>
       </div>
     </div>
     <script src="script.js"></script>

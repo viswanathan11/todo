@@ -71,7 +71,7 @@ button:active {
   box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
 }
 
-.add-task-container {
+.add-student-container {
   background: white;
   color: #2d3748;
   display: flex;
@@ -84,7 +84,7 @@ button:active {
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
-#task-form {
+#student-form {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -98,8 +98,8 @@ label {
   margin-bottom: 8px;
   color: #2d3748;
 }
-#task,
-#deadline {
+#student-name,
+#student-id {
   text-align: center;
   height: 45px;
   border: 2px solid #e2e8f0;
@@ -109,14 +109,14 @@ label {
   transition: all 0.3s ease;
   width: 100%;
 }
-#task:focus,
-#deadline:focus {
+#student-name:focus,
+#student-id:focus {
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-.view-task {
+.view-student {
   display: flex;
   flex-direction: column;
   align-items: center;
