@@ -1,10 +1,10 @@
 
-//add task button
+//add student button
 function showCurrentSection(){
   const currentView=sessionStorage.getItem("currentView")||"main";
   const main=document.querySelector(".main-container");
-  const view=document.querySelector(".view-task");
-  const add=document.querySelector(".add-task-container");
+  const view=document.querySelector(".view-student");
+  const add=document.querySelector(".add-student-container");
 
   //first make all invisible
   main.classList.add("none");
@@ -14,81 +14,81 @@ function showCurrentSection(){
   if(currentView=="main") main.classList.remove("none");
   else if(currentView=="view"){
     view.classList.remove("none");
-    loadTask();
+    loadStudents();
   }
   else add.classList.remove("none");
 }
 showCurrentSection();
 
-const addtask = document.getElementById("add-task");
-const viewtask = document.getElementById("view-task");
-viewtask.addEventListener("click",viewTask);
-addtask.addEventListener("click", addTask);
+const addStudent = document.getElementById("add-student");
+const viewStudent = document.getElementById("view-student");
+viewStudent.addEventListener("click",viewStudents);
+addStudent.addEventListener("click", addStudentForm);
 //main section add button
-function addTask() {
+function addStudentForm() {
   const main_container = document.querySelector(".main-container");
-  const add_task = document.querySelector(".add-task-container");
+  const add_student = document.querySelector(".add-student-container");
   sessionStorage.setItem("currentView","add");
   main_container.classList.toggle("none");
-  add_task.classList.toggle("none");
+  add_student.classList.toggle("none");
 }
 //main section view button
-function viewTask() {
+function viewStudents() {
   const main_container = document.querySelector(".main-container");
-  const view_task = document.querySelector(".view-task");
+  const view_student = document.querySelector(".view-student");
   sessionStorage.setItem("currentView","view");
   main_container.classList.toggle("none");
-  view_task.classList.toggle("none");
-  loadTask();
+  view_student.classList.toggle("none");
+  loadStudents();
 }
 
-// add task section handling the form
-const form = document.getElementById("task-form");
+// add student section handling the form
+const form = document.getElementById("student-form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   done();
   form.reset();
 });
 function done() {
-  const input = document.querySelector("#task");
-  const deadline = document.querySelector("#deadline");
-  window.localStorage.setItem(input.value,deadline.value)
+  const input = document.querySelector("#student-name");
+  const studentId = document.querySelector("#student-id");
+  window.localStorage.setItem(input.value,studentId.value)
 }
-//add task: back button
+//add student: back button
 const back = document.querySelector("#back");
 back.addEventListener("click", (event) => {
   const main_container = document.querySelector(".main-container");
-  const add_task = document.querySelector(".add-task-container");
+  const add_student = document.querySelector(".add-student-container");
   sessionStorage.setItem("currentView","main");
   if (main_container.classList.contains("none")) {
-    add_task.classList.add("none");
+    add_student.classList.add("none");
     main_container.classList.remove("none");
   }
 });
 
 //view section
 const back_view = document.querySelector("#back-view");
-const add_view=document.querySelector("#add-task-view")
+const add_view=document.querySelector("#add-student-view")
 // view back button
 back_view.addEventListener("click", () => {
-  const view_sec = document.querySelector(".view-task");
+  const view_sec = document.querySelector(".view-student");
   const main_sec = document.querySelector(".main-container");
   sessionStorage.setItem("currentView","main")
   main_sec.classList.remove("none");
   view_sec.classList.add("none");
 });
-//view add task button
+//view add student button
 add_view.addEventListener("click",()=>{
-  const view_task=document.querySelector(".view-task");
-  const add_task=document.querySelector(".add-task-container");
+  const view_student=document.querySelector(".view-student");
+  const add_student=document.querySelector(".add-student-container");
   sessionStorage.setItem("currentView","add");
-  view_task.classList.toggle("none");
-  add_task.classList.toggle("none");
+  view_student.classList.toggle("none");
+  add_student.classList.toggle("none");
 })
 
-//view loading tasks.
+//view loading students.
 
-function loadTask(){
+function loadStudents(){
   const keys=Object.keys(localStorage);
   let sno=1;
 
@@ -101,21 +101,21 @@ function loadTask(){
     row.innerHTML=`<td>${sno++}</td>
     <td>${keys[i]}</td>
     <td>${localStorage.getItem(keys[i])}</td>
-    <td><button id="done-btn" data-task="${keys[i]}" onclick="removeTask(this)">Done</button><td>`;
+    <td><button id="done-btn" data-student="${keys[i]}" onclick="removeStudent(this)">Delete</button><td>`;
     tbody.appendChild(row);
   }
 
   if(localStorage.length===0){
     const row=document.createElement("tr");
-    row.innerHTML=`<td colspan="4">No Task Created</td>`
+    row.innerHTML=`<td colspan="4">No Students Added</td>`
     tbody.appendChild(row);
   }
 }
 
-function removeTask(button){
-  const taskName=button.dataset.task;
+function removeStudent(button){
+  const studentName=button.dataset.student;
 
-  console.log(taskName);
-  localStorage.removeItem(taskName);
-  loadTask();
+  console.log(studentName);
+  localStorage.removeItem(studentName);
+  loadStudents();
 }
